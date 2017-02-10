@@ -16,4 +16,6 @@ class ModelController {
           let owner = User(name: "michaelpri", aboutMe: "Moderator Pro Tempore on Lifehacks.SE", profilePictureName: "michaelpri", reputation: 5276)
           return Question(title: title, body: body, score: 24, owner: owner)
      }()
+     
+     var user = User(name: "Mike Chapman", aboutMe: "I am the user of this App", profilePictureName: "ProfilePicture", reputation: 120)
 }
