@@ -8,15 +8,15 @@
 
 import UIKit
 
-class QuestionViewController: UIViewController {
+class QuestionViewController: UIViewController, Stateful {
+
      @IBOutlet weak var titleLabel: UILabel!
      @IBOutlet weak var bodyLabel: UILabel!
      @IBOutlet weak var scoreLabel: UILabel!
      @IBOutlet weak var askerImageView: UIImageView!
-     @IBOutlet weak var askerNameLabel: UILabel!
+     @IBOutlet weak var askerNameButton: UIButton!
      
-     private let modelController = ModelController()
-
+     var modelController: ModelController!
 
 
          override func viewDidLoad() {
@@ -28,10 +28,17 @@ class QuestionViewController: UIViewController {
           updateScore(for: question)
           let asker = question.owner
           askerImageView.image = UIImage(named: asker.profilePictureName)
-          askerNameLabel.text = asker.name
+          askerNameButton.setTitle(asker.name, for: .normal)
           
-                              
      }
+     
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+          if let userViewController = segue.destination as? UserViewController {
+               passState(to: userViewController)
+               userViewController.user = modelController.topQuestion.owner
+          }
+     }
+
      
      fileprivate func updateScore(for question: Question) {
           scoreLabel.text = "\(question.score)"

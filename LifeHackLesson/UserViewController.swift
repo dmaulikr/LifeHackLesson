@@ -8,37 +8,38 @@
 
 import UIKit
 
-class UserViewController: UIViewController {
+class UserViewController: UIViewController, Stateful {
 
      @IBOutlet weak var profilePictureImageView: UIImageView!
      @IBOutlet weak var nameLabel: UILabel!
      @IBOutlet weak var reputationLabel: UILabel!
      @IBOutlet weak var aboutMeLabel: UILabel!
      
-     fileprivate let modelController = ModelController()
+     var user: User?
+     var modelController: ModelController!
      
      
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let user = modelController.user
-        profilePictureImageView.image = UIImage(named: user.profilePictureName)
-        nameLabel.text = user.name
-        reputationLabel.text = "\(user.reputation)"
-        aboutMeLabel.text = user.aboutMe
-
+          
+     override func viewWillAppear(_ animated: Bool) {
+          super.viewWillAppear(animated)
+          if let user = self.user {
+               set(user)
+               navigationItem.rightBarButtonItem = nil
+          } else {
+               set(modelController.user)
+          }
      }
-
-        
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+          if let destination = segue.destination as? Stateful {
+               passState(to: destination)
+          }
+     }
+     
+     fileprivate func set(_ user: User) {
+          profilePictureImageView.image = UIImage(named: user.profilePictureName)
+          nameLabel.text = user.name
+          reputationLabel.text = "\(user.reputation)"
+          aboutMeLabel.text = user.aboutMe
+     }
 }
