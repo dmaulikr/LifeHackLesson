@@ -62,7 +62,6 @@
 		27B248B71E4B39CF0020696D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				27DD78231E4A3A660001E9B3 /* AppDelegate.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -120,6 +119,7 @@
 				27DD782F1E4A3A660001E9B3 /* Info.plist */,
 				27B248B41E4B396B0020696D /* Main.storyboard */,
 				27CF75FB1E53813F00BE61FD /* Stateful.swift */,
+				27DD78231E4A3A660001E9B3 /* AppDelegate.swift */,
 				27CF75FD1E5389BA00BE61FD /* InitialTabBarController.swift */,
 			);
 			path = LifeHackLesson;

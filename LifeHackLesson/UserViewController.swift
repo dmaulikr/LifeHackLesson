@@ -31,8 +31,10 @@ class UserViewController: UIViewController, Stateful {
      }
      
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-          if let destination = segue.destination as? Stateful {
+          if let destination = segue.destination as? UserEditingViewController {
                passState(to: destination)
+               destination.delegate = self
+               
           }
      }
      
@@ -43,3 +45,18 @@ class UserViewController: UIViewController, Stateful {
           aboutMeLabel.text = user.aboutMe
      }
 }
+extension UserViewController: UserEditingViewControllerDelegate {
+     func userEditingViewControllerDidSave() {
+           nameLabel.textColor = UIColor.brown
+           reputationLabel.textColor = UIColor.green
+           aboutMeLabel.textColor = UIColor.green
+               
+          }
+     }
+     
+     
+     
+     
+     
+     
+

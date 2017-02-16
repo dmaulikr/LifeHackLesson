@@ -159,13 +159,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Or3-0y-drE">
-                                <rect key="frame" x="144" y="112" width="95.666666666666657" height="21.666666666666657"/>
+                                <rect key="frame" x="144" y="112" width="270" height="22"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZf-oI-wPZ">
-                                <rect key="frame" x="250" y="142.66666666666666" width="32" height="21"/>
+                                <rect key="frame" x="250" y="143" width="32" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -179,19 +179,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAf-tI-7Tw">
-                                <rect key="frame" x="348" y="64" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="16T-df-pFm"/>
-                                    <constraint firstAttribute="height" constant="30" id="dd7-pg-vpp"/>
-                                </constraints>
-                                <state key="normal" title="Edit"/>
-                                <connections>
-                                    <segue destination="Uz7-w7-vwQ" kind="presentation" id="wBG-Re-U4O"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reputation:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMS-2b-Zct">
-                                <rect key="frame" x="144" y="141.66666666666666" width="98" height="22"/>
+                                <rect key="frame" x="144" y="142" width="98" height="22"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -205,17 +194,27 @@
                             <constraint firstItem="NVV-qH-ASO" firstAttribute="leading" secondItem="Z1h-zM-zCk" secondAttribute="leading" constant="20" id="D2f-oG-b2Z"/>
                             <constraint firstItem="NVV-qH-ASO" firstAttribute="top" secondItem="nzi-FP-Kdb" secondAttribute="bottom" constant="16" id="Tqx-uG-mKS"/>
                             <constraint firstItem="EZf-oI-wPZ" firstAttribute="leading" secondItem="zMS-2b-Zct" secondAttribute="trailing" constant="8" id="W2R-TN-F6u"/>
+                            <constraint firstItem="Or3-0y-drE" firstAttribute="top" secondItem="nzi-FP-Kdb" secondAttribute="top" id="XOn-6B-ych"/>
                             <constraint firstItem="nzi-FP-Kdb" firstAttribute="top" secondItem="9BY-Px-c4E" secondAttribute="bottom" constant="48" id="ey3-Ur-Efd"/>
                             <constraint firstAttribute="trailing" secondItem="NVV-qH-ASO" secondAttribute="trailing" constant="20" id="naK-GT-rxM"/>
                             <constraint firstItem="nzi-FP-Kdb" firstAttribute="leading" secondItem="Z1h-zM-zCk" secondAttribute="leading" constant="16" id="nyU-A3-eCI"/>
-                            <constraint firstItem="YAf-tI-7Tw" firstAttribute="trailing" secondItem="Z1h-zM-zCk" secondAttribute="trailingMargin" id="olr-cn-39G"/>
-                            <constraint firstItem="Or3-0y-drE" firstAttribute="top" secondItem="YAf-tI-7Tw" secondAttribute="bottom" constant="18" id="rto-8H-edV"/>
-                            <constraint firstItem="YAf-tI-7Tw" firstAttribute="top" secondItem="9BY-Px-c4E" secondAttribute="bottom" id="sl6-fS-NVj"/>
                             <constraint firstItem="Or3-0y-drE" firstAttribute="leading" secondItem="nzi-FP-Kdb" secondAttribute="trailing" constant="8" id="uOQ-mr-52u"/>
+                            <constraint firstAttribute="trailing" secondItem="Or3-0y-drE" secondAttribute="trailing" id="wFp-V7-WN4"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="uJd-fm-u86"/>
-                    <navigationItem key="navigationItem" id="tDQ-fU-vwk"/>
+                    <navigationItem key="navigationItem" id="tDQ-fU-vwk">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" style="plain" id="gUM-7F-ZVi">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mEf-OA-4Eq">
+                                <rect key="frame" x="364" y="7" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Edit"/>
+                                <connections>
+                                    <segue destination="Uz7-w7-vwQ" kind="presentation" id="EpB-kK-lRl"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="aboutMeLabel" destination="NVV-qH-ASO" id="RBZ-2T-hHP"/>
                         <outlet property="nameLabel" destination="Or3-0y-drE" id="NvT-5a-4bT"/>

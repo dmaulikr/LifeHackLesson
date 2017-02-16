@@ -8,6 +8,12 @@
 
 import UIKit
 
+protocol UserEditingViewControllerDelegate {
+     func userEditingViewControllerDidSave()
+}
+
+
+
 class UserEditingViewController: UIViewController, Stateful {
 
      
@@ -16,6 +22,8 @@ class UserEditingViewController: UIViewController, Stateful {
      @IBOutlet weak var aboutMeTextView: UITextView!
      
      var modelController: ModelController!
+     var delegate: UserEditingViewControllerDelegate?
+     
      
      
      
@@ -31,6 +39,7 @@ class UserEditingViewController: UIViewController, Stateful {
           if let modelController = modelController, let name = nameTextField.text, let aboutMe = aboutMeTextView.text {
                let oldUser = modelController.user
                modelController.user = User(name: name, aboutMe: aboutMe, profilePictureName: oldUser.profilePictureName, reputation: oldUser.reputation)
+               delegate?.userEditingViewControllerDidSave()
                dismiss(animated: true, completion: nil)
           } else {
                let title = "Missing name or about me"

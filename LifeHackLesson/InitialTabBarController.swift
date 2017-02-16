@@ -12,9 +12,8 @@ class InitialTabBarController: UITabBarController, Stateful {
 
      var modelController: ModelController!
 
-     required init?(coder aDecoder: NSCoder) {
-          super.init(coder: aDecoder)
-          modelController = ModelController()
+     
+     override func viewDidLoad() {
           for navigationController in viewControllers as! [UINavigationController] {
                if let statefulViewController = navigationController.viewControllers.first as? Stateful {
                     passState(to: statefulViewController)
