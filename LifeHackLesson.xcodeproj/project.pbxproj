@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27034DC81E5769D5007EF981 /* TopQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27034DC71E5769D5007EF981 /* TopQuestionsViewController.swift */; };
+		27034DCA1E5778E1007EF981 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27034DC91E5778E1007EF981 /* QuestionCell.swift */; };
+		27562BE61E5A3E6800DB4232 /* QuestionsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27562BE51E5A3E6800DB4232 /* QuestionsDataSource.swift */; };
 		27B248B51E4B396B0020696D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27B248B41E4B396B0020696D /* Main.storyboard */; };
 		27BFFB181E4E59CB0003513A /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BFFB171E4E59CB0003513A /* UserViewController.swift */; };
 		27BFFB1A1E4E5ED00003513A /* UserEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BFFB191E4E5ED00003513A /* UserEditingViewController.swift */; };
@@ -22,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27034DC71E5769D5007EF981 /* TopQuestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopQuestionsViewController.swift; sourceTree = "<group>"; };
+		27034DC91E5778E1007EF981 /* QuestionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
+		27562BE51E5A3E6800DB4232 /* QuestionsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsDataSource.swift; sourceTree = "<group>"; };
 		27B248B41E4B396B0020696D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		27BFFB171E4E59CB0003513A /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		27BFFB191E4E5ED00003513A /* UserEditingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEditingViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +61,8 @@
 				27DD78251E4A3A660001E9B3 /* QuestionViewController.swift */,
 				27BFFB171E4E59CB0003513A /* UserViewController.swift */,
 				27BFFB191E4E5ED00003513A /* UserEditingViewController.swift */,
+				27034DC71E5769D5007EF981 /* TopQuestionsViewController.swift */,
+				27CF75FD1E5389BA00BE61FD /* InitialTabBarController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -120,7 +128,8 @@
 				27B248B41E4B396B0020696D /* Main.storyboard */,
 				27CF75FB1E53813F00BE61FD /* Stateful.swift */,
 				27DD78231E4A3A660001E9B3 /* AppDelegate.swift */,
-				27CF75FD1E5389BA00BE61FD /* InitialTabBarController.swift */,
+				27034DC91E5778E1007EF981 /* QuestionCell.swift */,
+				27562BE51E5A3E6800DB4232 /* QuestionsDataSource.swift */,
 			);
 			path = LifeHackLesson;
 			sourceTree = "<group>";
@@ -200,12 +209,15 @@
 			files = (
 				27F9F4581E4A74A20043EDA9 /* RoundedCorners.swift in Sources */,
 				27CF75FE1E5389BA00BE61FD /* InitialTabBarController.swift in Sources */,
+				27562BE61E5A3E6800DB4232 /* QuestionsDataSource.swift in Sources */,
 				27CF75FC1E53813F00BE61FD /* Stateful.swift in Sources */,
 				27BFFB181E4E59CB0003513A /* UserViewController.swift in Sources */,
+				27034DCA1E5778E1007EF981 /* QuestionCell.swift in Sources */,
 				27DD78261E4A3A660001E9B3 /* QuestionViewController.swift in Sources */,
 				27BFFB1A1E4E5ED00003513A /* UserEditingViewController.swift in Sources */,
 				27DD78381E4A3BA90001E9B3 /* ModelController.swift in Sources */,
 				27DD78241E4A3A660001E9B3 /* AppDelegate.swift in Sources */,
+				27034DC81E5769D5007EF981 /* TopQuestionsViewController.swift in Sources */,
 				27DD78361E4A3A890001E9B3 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -21,6 +21,17 @@ struct Question {
      fileprivate (set) var score: Int
      let owner: User
      
+     var id: String {
+          return owner.name + title
+     }
+     
+     init(title: String, body: String, score: Int, owner: User) {
+          self.title = title
+          self.body = body
+          self.score = score
+          self.owner = owner
+     }
+     
      mutating func voteUp() {
           score += 1
      }

@@ -17,25 +17,26 @@ class QuestionViewController: UIViewController, Stateful {
      @IBOutlet weak var askerNameButton: UIButton!
      
      var modelController: ModelController!
+     var question: Question!
 
 
          override func viewDidLoad() {
           super.viewDidLoad()
           
-          let question = modelController.topQuestion
           titleLabel.text = question.title
           bodyLabel.text = question.body
-          updateScore(for: question)
-          let asker = question.owner
-          askerImageView.image = UIImage(named: asker.profilePictureName)
-          askerNameButton.setTitle(asker.name, for: .normal)
-          
+          if let question = question {
+               updateScore(for: question)
+               let asker = question.owner
+               askerImageView.image = UIImage(named: asker.profilePictureName)
+               askerNameButton.setTitle(asker.name, for: .normal)
+        }
      }
      
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
           if let userViewController = segue.destination as? UserViewController {
                passState(to: userViewController)
-               userViewController.user = modelController.topQuestion.owner
+               userViewController.user = question.owner
           }
      }
 
@@ -45,14 +46,16 @@ class QuestionViewController: UIViewController, Stateful {
      }
      
      @IBAction func voteUp(_ sender: Any) {
-          modelController.topQuestion.voteUp()
-          updateScore(for: modelController.topQuestion)
+          question.voteUp()
+          modelController.updateQuestion(question)
+          updateScore(for: question)
      
      }
      
      @IBAction func voteDown(_ sender: Any) {
-          modelController.topQuestion.voteDown()
-          updateScore(for: modelController.topQuestion)
+          question.voteDown()
+          modelController.updateQuestion(question)
+          updateScore(for: question)
      
      }
 }
